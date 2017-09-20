@@ -1,0 +1,60 @@
+{% set name = "xeus" %}
+{% set version = "0.5.4" %}
+{% set sha256 = "bb2b344e6655af7fc5304842a07620361f836ae843e0046c4c0406ccb32a73f5" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/QuantStack/xeus/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  skip: true  # [win and py<35]
+  features:   # [win]
+    - vc14    # [win]
+
+requirements:
+  build:
+    - toolchain
+    - cmake
+    - python  # [win]
+    - vc 14   # [win and py>=35]
+    - cppzmq
+    - zeromq
+    - cryptopp
+    - rapidjson
+    - util-linux  # [linux]
+  run:
+    - zeromq
+    - cryptopp
+    - util-linux  # [linux]
+    - vc 14    # [win and py>=35]
+    
+test:
+  commands:
+    - test -d ${PREFIX}/include/xeus  # [unix]
+    - test -f ${PREFIX}/include/xeus/xeus.hpp  # [unix]
+    - test -f ${PREFIX}/lib/cmake/xeus/xeusConfig.cmake  # [unix]
+    - test -f ${PREFIX}/lib/cmake/xeus/xeusConfigVersion.cmake  # [unix]
+    - if exist %LIBRARY_PREFIX%\include\xeus\xeus.hpp (exit 0) else (exit 1)  # [win]
+    - if exist %LIBRARY_PREFIX%\lib\xeusConfig.cmake (exit 0) else (exit 1)  # [win]
+    - if exist %LIBRARY_PREFIX%\lib\xeusConfigVersion.cmake (exit 0) else (exit 1)  # [win]
+
+about:
+  home: http://quantstack.net/xeus
+  license: BSD 3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'C++ implementation of the Jupyter Kernel protocol'
+  description: 'xeus is a library meant to facilitate the implementation of kernels for Jupyter. It takes the burden of implementing the Jupyter Kernel protocol so developers can focus on implementing the interpreter part of the Kernel.'
+  doc_url: http://xeus.readthedocs.io
+  dev_url: https://github.com/QuantStack/xeus
+
+extra:
+  recipe-maintainers:
+    - SylvainCorlay
+    - JohanMabille
