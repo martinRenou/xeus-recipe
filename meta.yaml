@@ -1,6 +1,6 @@
 {% set name = "xeus" %}
-{% set version = "0.5.4" %}
-{% set sha256 = "bb2b344e6655af7fc5304842a07620361f836ae843e0046c4c0406ccb32a73f5" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "e7720bb9f8c5f7672b3d2e803aa9235cc0a6f0d36a8ac3c320f25aa42afe7a03" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and py<35]
   features:   # [win]
     - vc14    # [win]
@@ -28,6 +28,7 @@ requirements:
     - cryptopp
     - rapidjson
     - util-linux  # [linux]
+    - xtl
   run:
     - zeromq
     - cryptopp
