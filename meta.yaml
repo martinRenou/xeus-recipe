@@ -26,9 +26,8 @@ requirements:
     - cppzmq
     - zeromq
     - cryptopp
-    - rapidjson
     - util-linux  # [linux]
-    - xtl
+    - xtl >=0.2.2,<0.3
   run:
     - zeromq
     - cryptopp
