@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build__CONDA_PY_36:
+  build_CONDA_PY_36:
     working_directory: ~/test
     machine: true
     environment:
@@ -27,4 +27,4 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build__CONDA_PY_36
+      - build_CONDA_PY_36
