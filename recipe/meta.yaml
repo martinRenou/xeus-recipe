@@ -24,6 +24,7 @@ requirements:
     - cppzmq
     - zeromq
     - cryptopp
+    - gcc-7             # [linux]
     - xtl >=0.3.4,<0.4
   run:
     - zeromq
