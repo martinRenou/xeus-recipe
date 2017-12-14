@@ -10,7 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/QuantStack/xeus/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-
+  patches:
+    - 0001-add-zeromq.patch
 build:
   number: 0
   skip: true  # [win and py<35]
