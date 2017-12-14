@@ -21,14 +21,16 @@ requirements:
   build:
     - toolchain
     - cmake
-    - cppzmq
-    - zeromq
+    - cling-patches
+    - cppzmq 4.2.2
+    - zeromq 4.2.3
     - cryptopp
     - gcc-7             # [linux]
     - util-linux        # [linux]
     - xtl >=0.3.4,<0.4
   run:
-    - zeromq
+    - cling-patches
+    - zeromq 4.2.3
     - cryptopp
     - util-linux        # [linux]
 
