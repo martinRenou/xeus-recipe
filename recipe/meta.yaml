@@ -13,8 +13,9 @@ source:
   patches:
     - 0001-add-zeromq.patch
     - 0001-fix-static-cppzmq.patch
+    - 0001-remove-shared-lib.patch
 build:
-  number: 0
+  number: 1
   skip: true  # [win and py<35]
   features:   # [win]
     - vc14    # [win]
