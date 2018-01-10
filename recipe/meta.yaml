@@ -1,6 +1,6 @@
 {% set name = "xeus" %}
-{% set version = "0.8.2" %}
-{% set sha256 = "7125981b6e2c53ae9768b66b99068cd4a905d9d7c130843be7e33ffe75cc07fc" %}
+{% set version = "0.9.0" %}
+{% set sha256 = "b00b2789d09113099a4c5714d041cbeae35b39993fd63c501a896165f7a287f0" %}
 
 package:
   name: {{ name|lower }}
@@ -10,11 +10,9 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/QuantStack/xeus/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-add-zeromq.patch
    
 build:
-  number: 1
+  number: 0
   skip: true  # [win and py<35]
   features:   # [win]
     - vc14    # [win]
