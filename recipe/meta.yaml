@@ -1,6 +1,6 @@
 {% set name = "xeus" %}
-{% set version = "0.11.0" %}
-{% set sha256 = "479bf8ed915d325efe3b237697b50d8113f74928130a35be7f44dce87912d7a8" %}
+{% set version = "0.12.0" %}
+{% set sha256 = "dd7b76d8bfb8459e605dc1220bb0cc13acf9faa5504e79ad8e6932940b3d8035" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,6 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: ''
-  noarch_python: false
   features:
     - cling
     - vc14    # [win]
