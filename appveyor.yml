@@ -9,10 +9,6 @@ environment:
     secure: GM8zcUvE63jeSWWeNaQgmTTz0/t+Ef90QsRpbR7QhNQc3vt9kMC4DKAGHn4kJ3TD
 
   matrix:
-    - TARGET_ARCH: x86
-      CONDA_PY: 36
-      CONDA_INSTALL_LOCN: C:\\Miniconda36
-      
     - TARGET_ARCH: x64
       CONDA_PY: 36
       CONDA_INSTALL_LOCN: C:\\Miniconda36-x64
